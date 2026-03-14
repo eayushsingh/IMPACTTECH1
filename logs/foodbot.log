@@ -750,3 +750,275 @@ Anything else I can help with? 😊
 2026-01-19 19:36:16,336 - INFO - ✅ Connected to SQLite database
 2026-01-19 19:36:16,337 - INFO - {'order_id': 366, 'message': 'Order details fetched'}
 2026-01-19 19:36:16,337 - INFO - 🔐 Database connection closed
+2026-03-14 18:25:00,246 - INFO - ✅ Connected to SQLite database
+2026-03-14 18:25:00,247 - INFO - 🍔 Fetched menu items
+2026-03-14 18:25:00,247 - ERROR - {'error': "string indices must be integers, not 'str'", 'message': '❌ Menu fetch failed'}
+2026-03-14 18:25:00,247 - INFO - 🔐 Database connection closed
+2026-03-14 18:25:00,247 - INFO - 🍽️ OrderHandler initialized
+2026-03-14 18:37:53,761 - INFO - ✅ Connected to SQLite database
+2026-03-14 18:37:53,761 - INFO - 🍔 Fetched menu items
+2026-03-14 18:37:53,761 - ERROR - {'error': "string indices must be integers, not 'str'", 'message': '❌ Menu fetch failed'}
+2026-03-14 18:37:53,761 - INFO - 🔐 Database connection closed
+2026-03-14 18:37:53,761 - INFO - 🍽️ OrderHandler initialized
+2026-03-14 18:38:54,683 - INFO - ✅ Connected to SQLite database
+2026-03-14 18:38:54,684 - WARNING - {'username': '', 'message': 'Login failed'}
+2026-03-14 18:38:54,684 - INFO - 🔐 Database connection closed
+2026-03-14 18:39:27,746 - INFO - ✅ Connected to SQLite database
+2026-03-14 18:39:27,939 - INFO - {'username': 'srihan', 'email': '2410080021@klh.edu.in', 'message': 'User registered'}
+2026-03-14 18:39:28,445 - INFO - 🔐 Database connection closed
+2026-03-14 18:39:38,101 - INFO - ✅ Connected to SQLite database
+2026-03-14 18:39:38,291 - INFO - {'username': 'srihan', 'role': 'customer', 'message': 'User logged in'}
+2026-03-14 18:39:38,797 - INFO - 🔐 Database connection closed
+2026-03-14 18:39:38,943 - INFO - {'message': 'Rendering home page'}
+2026-03-14 18:40:24,735 - INFO - ✅ Connected to SQLite database
+2026-03-14 18:40:24,735 - INFO - 🍔 Fetched menu items
+2026-03-14 18:40:24,735 - ERROR - {'error': "string indices must be integers, not 'str'", 'message': '❌ Menu fetch failed'}
+2026-03-14 18:40:24,735 - INFO - 🔐 Database connection closed
+2026-03-14 18:40:24,735 - INFO - 🍽️ OrderHandler initialized
+2026-03-14 18:41:39,038 - INFO - Streaming query:  Can you order chicken biryani? Can you order chicken biryani? Can you order chicken biryani?
+2026-03-14 18:41:39,039 - INFO - Graph not found, building new graph
+2026-03-14 18:41:39,039 - INFO - 📈 Building workflow
+2026-03-14 18:41:39,044 - INFO - ✅ Graph built successfully
+2026-03-14 18:41:39,044 - INFO - Graph initialized
+2026-03-14 18:41:39,048 - INFO - 🔄 (Re)configuring LLM → openai/gpt-oss-120b
+2026-03-14 18:41:39,256 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-14 18:41:39,460 - INFO - 💬 LLM response: 
+2026-03-14 18:41:39,460 - INFO - Tool calls: [{'name': 'get_prices_for_items', 'args': {'items': ['chicken biryani']}, 'id': 'fc_20aef1d6-3d49-4268-9b85-c8149b7aea42', 'type': 'tool_call'}]
+2026-03-14 18:41:39,468 - INFO - ✅ Connected to SQLite database (Async)
+2026-03-14 18:41:39,469 - INFO - 🍔 Fetched menu items (Async)
+2026-03-14 18:41:39,469 - INFO - 💰 Prices fetched for 1 items
+2026-03-14 18:41:39,469 - INFO - 🔐 Database connection closed (Async)
+2026-03-14 18:41:39,675 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-14 18:41:40,072 - INFO - 💬 LLM response: Sure! Here’s a quick summary for **1 Chicken Biryani**:
+
+| Item          | Qty | Unit Price | Subtotal |
+|---------------|-----|------------|----------|
+| Chicken Biryani | 1   | $8.99      | $8.99    |
+**Total:** $8.99  
+
+Would you like to place this order? ✅  
+
+Anything else I can help with? 😊
+2026-03-14 18:43:38,199 - INFO - Streaming query:  Can you order chicken biryani?
+2026-03-14 18:43:38,212 - INFO - Retrying request to /openai/v1/chat/completions in 0.460760 seconds
+2026-03-14 18:43:38,791 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-14 18:43:39,096 - INFO - 💬 LLM response: Here’s the order summary for **1 Chicken Biryani**:
+
+| Item          | Qty | Unit Price | Subtotal |
+|---------------|-----|------------|----------|
+| Chicken Biryani | 1   | $8.99      | $8.99    |
+**Total:** $8.99  
+
+Shall I place this order for you? ✅  
+
+Anything else I can help with? 😊
+2026-03-14 18:48:33,951 - INFO - Streaming query:  Can you order ice cream?
+2026-03-14 18:48:33,962 - INFO - Retrying request to /openai/v1/chat/completions in 0.397888 seconds
+2026-03-14 18:48:34,508 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-14 18:48:34,670 - INFO - 💬 LLM response: 
+2026-03-14 18:48:34,670 - INFO - Tool calls: [{'name': 'get_prices_for_items', 'args': {'items': ['ice cream']}, 'id': 'fc_8e8e165e-a714-4c39-ac16-23275bcc1ab4', 'type': 'tool_call'}]
+2026-03-14 18:48:34,672 - INFO - ✅ Connected to SQLite database (Async)
+2026-03-14 18:48:34,673 - INFO - 🍔 Fetched menu items (Async)
+2026-03-14 18:48:34,673 - INFO - 💰 Prices fetched for 1 items
+2026-03-14 18:48:34,673 - INFO - 🔐 Database connection closed (Async)
+2026-03-14 18:48:34,760 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-14 18:48:35,024 - INFO - 💬 LLM response: Sorry, “ice cream” isn’t on our menu ❌. Please check the displayed menu and choose an available item.
+
+Anything else I can help with? 😊
+2026-03-14 19:23:03,801 - INFO - ✅ Connected to SQLite database
+2026-03-14 19:23:04,016 - INFO - {'username': 'srihan', 'role': 'customer', 'message': 'User logged in'}
+2026-03-14 19:23:04,522 - INFO - 🔐 Database connection closed
+2026-03-14 19:23:04,653 - INFO - {'message': 'Rendering home page'}
+2026-03-14 19:28:59,859 - INFO - ✅ Connected to SQLite database
+2026-03-14 19:28:59,860 - INFO - 🍔 Fetched menu items
+2026-03-14 19:28:59,860 - ERROR - {'error': "string indices must be integers, not 'str'", 'message': '❌ Menu fetch failed'}
+2026-03-14 19:28:59,860 - INFO - 🔐 Database connection closed
+2026-03-14 19:28:59,860 - INFO - 🍽️ OrderHandler initialized
+2026-03-14 19:29:14,203 - INFO - ✅ Connected to SQLite database
+2026-03-14 19:29:14,491 - INFO - {'username': 'srihan', 'role': 'customer', 'message': 'User logged in'}
+2026-03-14 19:29:14,998 - INFO - 🔐 Database connection closed
+2026-03-14 19:29:15,095 - INFO - {'message': 'Rendering home page'}
+2026-03-14 19:29:49,360 - INFO - ✅ Connected to SQLite database
+2026-03-14 19:29:49,652 - INFO - {'username': 'srihan', 'role': 'customer', 'message': 'User logged in'}
+2026-03-14 19:29:50,159 - INFO - 🔐 Database connection closed
+2026-03-14 19:29:50,329 - INFO - {'message': 'Rendering home page'}
+2026-03-14 19:29:53,110 - INFO - ✅ Connected to SQLite database
+2026-03-14 19:29:53,110 - INFO - 🍔 Fetched menu items
+2026-03-14 19:29:53,111 - INFO - 🔐 Database connection closed
+2026-03-14 19:35:53,240 - INFO - ✅ Connected to SQLite database
+2026-03-14 19:35:53,240 - INFO - 🍔 Fetched menu items
+2026-03-14 19:35:53,240 - ERROR - {'error': "string indices must be integers, not 'str'", 'message': '❌ Menu fetch failed'}
+2026-03-14 19:35:53,240 - INFO - 🔐 Database connection closed
+2026-03-14 19:35:53,240 - INFO - 🍽️ OrderHandler initialized
+2026-03-14 19:36:05,138 - INFO - ✅ Connected to SQLite database
+2026-03-14 19:36:05,425 - INFO - {'username': 'srihan', 'role': 'customer', 'message': 'User logged in'}
+2026-03-14 19:36:05,931 - INFO - 🔐 Database connection closed
+2026-03-14 19:36:06,040 - INFO - {'message': 'Rendering home page'}
+2026-03-14 19:36:24,645 - INFO - ✅ Connected to SQLite database
+2026-03-14 19:36:24,645 - INFO - 🍔 Fetched menu items
+2026-03-14 19:36:24,646 - INFO - 🔐 Database connection closed
+2026-03-14 19:36:26,023 - INFO - {'message': 'Rendering home page'}
+2026-03-14 19:37:02,856 - INFO - ✅ Connected to SQLite database
+2026-03-14 19:37:03,142 - INFO - {'username': 'srihan', 'role': 'customer', 'message': 'User logged in'}
+2026-03-14 19:37:03,648 - INFO - 🔐 Database connection closed
+2026-03-14 19:37:03,819 - INFO - {'message': 'Rendering home page'}
+2026-03-14 19:41:37,227 - INFO - ✅ Connected to SQLite database
+2026-03-14 19:41:37,228 - INFO - 🍔 Fetched menu items
+2026-03-14 19:41:37,228 - ERROR - {'error': "string indices must be integers, not 'str'", 'message': '❌ Menu fetch failed'}
+2026-03-14 19:41:37,228 - INFO - 🔐 Database connection closed
+2026-03-14 19:41:37,228 - INFO - 🍽️ OrderHandler initialized
+2026-03-14 19:41:50,046 - INFO - ✅ Connected to SQLite database
+2026-03-14 19:41:50,335 - INFO - {'username': 'srihan', 'role': 'customer', 'message': 'User logged in'}
+2026-03-14 19:41:50,841 - INFO - 🔐 Database connection closed
+2026-03-14 19:41:50,949 - INFO - {'message': 'Rendering home page'}
+2026-03-14 19:41:53,324 - ERROR - {'error': "expected an indented block after 'if' statement on line 60 (voice_chat.py, line 61)", 'message': 'Voice assistant initialization failed'}
+2026-03-14 19:42:00,456 - INFO - {'message': 'Rendering home page'}
+2026-03-14 19:42:16,657 - ERROR - {'error': "expected an indented block after 'if' statement on line 60 (voice_chat.py, line 61)", 'message': 'Voice assistant initialization failed'}
+2026-03-14 19:48:05,685 - INFO - ✅ Connected to SQLite database
+2026-03-14 19:48:05,685 - INFO - 🍔 Fetched menu items
+2026-03-14 19:48:05,685 - ERROR - {'error': "string indices must be integers, not 'str'", 'message': '❌ Menu fetch failed'}
+2026-03-14 19:48:05,685 - INFO - 🔐 Database connection closed
+2026-03-14 19:48:05,686 - INFO - 🍽️ OrderHandler initialized
+2026-03-14 19:48:17,031 - INFO - ✅ Connected to SQLite database
+2026-03-14 19:48:17,324 - INFO - {'username': 'srihan', 'role': 'customer', 'message': 'User logged in'}
+2026-03-14 19:48:17,830 - INFO - 🔐 Database connection closed
+2026-03-14 19:48:17,960 - INFO - {'message': 'Rendering home page'}
+2026-03-14 19:48:28,767 - INFO - ✅ Connected to SQLite database
+2026-03-14 19:48:28,768 - INFO - 🍔 Fetched menu items
+2026-03-14 19:48:28,768 - ERROR - {'error': "string indices must be integers, not 'str'", 'message': '❌ Menu fetch failed'}
+2026-03-14 19:48:28,768 - INFO - 🔐 Database connection closed
+2026-03-14 19:48:28,768 - INFO - 🍽️ OrderHandler initialized
+2026-03-14 19:48:32,062 - ERROR - {'error': "'app.voice_chat'", 'message': 'Voice assistant initialization failed'}
+2026-03-14 19:48:35,502 - INFO - ✅ Connected to SQLite database
+2026-03-14 19:48:35,795 - INFO - {'username': 'srihan', 'role': 'customer', 'message': 'User logged in'}
+2026-03-14 19:48:36,301 - INFO - 🔐 Database connection closed
+2026-03-14 19:48:36,521 - INFO - {'message': 'Rendering home page'}
+2026-03-14 19:49:32,805 - INFO - ✅ Connected to SQLite database
+2026-03-14 19:49:32,805 - INFO - 🍔 Fetched menu items
+2026-03-14 19:49:32,805 - ERROR - {'error': "string indices must be integers, not 'str'", 'message': '❌ Menu fetch failed'}
+2026-03-14 19:49:32,805 - INFO - 🔐 Database connection closed
+2026-03-14 19:49:32,805 - INFO - 🍽️ OrderHandler initialized
+2026-03-14 19:51:21,483 - INFO - ✅ Connected to SQLite database
+2026-03-14 19:51:21,770 - INFO - {'username': 'srihan', 'role': 'customer', 'message': 'User logged in'}
+2026-03-14 19:51:22,276 - INFO - 🔐 Database connection closed
+2026-03-14 19:51:22,381 - INFO - {'message': 'Rendering home page'}
+2026-03-14 20:38:51,271 - INFO - ✅ Connected to SQLite database
+2026-03-14 20:38:51,555 - INFO - {'username': 'srihan', 'role': 'customer', 'message': 'User logged in'}
+2026-03-14 20:38:52,062 - INFO - 🔐 Database connection closed
+2026-03-14 20:38:52,258 - INFO - {'message': 'Rendering home page'}
+2026-03-14 20:43:29,662 - INFO - ✅ Connected to SQLite database
+2026-03-14 20:43:29,663 - INFO - 🍔 Fetched menu items
+2026-03-14 20:43:29,663 - ERROR - {'error': "string indices must be integers, not 'str'", 'message': '❌ Menu fetch failed'}
+2026-03-14 20:43:29,663 - INFO - 🔐 Database connection closed
+2026-03-14 20:43:29,663 - INFO - 🍽️ OrderHandler initialized
+2026-03-14 20:45:16,315 - INFO - ✅ Connected to SQLite database
+2026-03-14 20:45:16,601 - INFO - {'username': 'srihan', 'role': 'customer', 'message': 'User logged in'}
+2026-03-14 20:45:17,107 - INFO - 🔐 Database connection closed
+2026-03-14 20:45:17,208 - INFO - {'message': 'Rendering home page'}
+2026-03-14 20:46:06,066 - INFO - Streaming query: I want chicken biriyani.
+2026-03-14 20:46:06,067 - INFO - Graph not found, building new graph
+2026-03-14 20:46:06,067 - INFO - 📈 Building workflow
+2026-03-14 20:46:06,074 - INFO - ✅ Graph built successfully
+2026-03-14 20:46:06,074 - INFO - Graph initialized
+2026-03-14 20:46:06,079 - INFO - 🔄 (Re)configuring LLM → openai/gpt-oss-120b
+2026-03-14 20:46:06,425 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-14 20:46:06,600 - INFO - 💬 LLM response: 
+2026-03-14 20:46:06,600 - INFO - Tool calls: [{'name': 'get_prices_for_items', 'args': {'items': ['chicken biriyani']}, 'id': 'fc_ba56f748-3f7e-446a-aa53-7bf30c88c500', 'type': 'tool_call'}]
+2026-03-14 20:46:06,607 - INFO - ✅ Connected to SQLite database (Async)
+2026-03-14 20:46:06,608 - INFO - 🍔 Fetched menu items (Async)
+2026-03-14 20:46:06,608 - INFO - 💰 Prices fetched for 1 items
+2026-03-14 20:46:06,608 - INFO - 🔐 Database connection closed (Async)
+2026-03-14 20:46:06,717 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-14 20:46:07,189 - INFO - 💬 LLM response: Sorry, “chicken biriyani” isn’t on our menu ❌. Please check the displayed menu for available items.
+
+Anything else I can help with? 😊
+2026-03-14 20:46:58,924 - INFO - Streaming query: I don't want chicken biryani
+2026-03-14 20:46:58,937 - INFO - Retrying request to /openai/v1/chat/completions in 0.455431 seconds
+2026-03-14 20:46:59,511 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-14 20:46:59,762 - INFO - 💬 LLM response: Got it! If you’d like to try something else, feel free to let me know what you’d like or check our menu for available options.
+
+Anything else I can help with? 😊
+2026-03-14 20:47:37,979 - INFO - Streaming query: I want Chicken Biryani
+2026-03-14 20:47:37,990 - INFO - Retrying request to /openai/v1/chat/completions in 0.498715 seconds
+2026-03-14 20:47:38,603 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-14 20:47:38,822 - INFO - 💬 LLM response: Sorry, “Chicken Biryani” isn’t on our menu ❌. Please choose an item that’s available.
+
+Anything else I can help with? 😊
+2026-03-14 20:48:44,340 - INFO - Streaming query: I want Chicken 65
+2026-03-14 20:48:44,351 - INFO - Retrying request to /openai/v1/chat/completions in 0.460041 seconds
+2026-03-14 20:48:45,034 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-14 20:48:45,195 - INFO - 💬 LLM response: 
+2026-03-14 20:48:45,196 - INFO - Tool calls: [{'name': 'get_prices_for_items', 'args': {'items': ['Chicken 65']}, 'id': 'fc_d9594bf1-c7b4-450a-9ccf-9e3f83af292c', 'type': 'tool_call'}]
+2026-03-14 20:48:45,202 - INFO - ✅ Connected to SQLite database (Async)
+2026-03-14 20:48:45,202 - INFO - 🍔 Fetched menu items (Async)
+2026-03-14 20:48:45,203 - INFO - 💰 Prices fetched for 1 items
+2026-03-14 20:48:45,203 - INFO - 🔐 Database connection closed (Async)
+2026-03-14 20:48:45,302 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-14 20:48:45,447 - INFO - 💬 LLM response: Sorry, “Chicken 65” isn’t on our menu ❌. Please pick an item from the available menu.
+
+Anything else I can help with? 😊
+2026-03-14 20:52:58,094 - INFO - ✅ Connected to SQLite database
+2026-03-14 20:52:58,094 - INFO - 🍔 Fetched menu items
+2026-03-14 20:52:58,094 - ERROR - {'error': "string indices must be integers, not 'str'", 'message': '❌ Menu fetch failed'}
+2026-03-14 20:52:58,094 - INFO - 🔐 Database connection closed
+2026-03-14 20:52:58,094 - INFO - 🍽️ OrderHandler initialized
+2026-03-14 20:53:10,349 - INFO - ✅ Connected to SQLite database
+2026-03-14 20:53:10,636 - INFO - {'username': 'srihan', 'role': 'customer', 'message': 'User logged in'}
+2026-03-14 20:53:11,142 - INFO - 🔐 Database connection closed
+2026-03-14 20:53:11,239 - INFO - {'message': 'Rendering home page'}
+2026-03-14 20:54:05,207 - INFO - ✅ Connected to SQLite database
+2026-03-14 20:54:05,207 - INFO - 🍔 Fetched menu items
+2026-03-14 20:54:05,207 - INFO - 🔐 Database connection closed
+2026-03-14 20:54:10,410 - INFO - {'message': 'Rendering home page'}
+2026-03-14 21:03:46,187 - INFO - ✅ Connected to SQLite database
+2026-03-14 21:03:46,473 - INFO - {'username': 'srihan', 'role': 'customer', 'message': 'User logged in'}
+2026-03-14 21:03:46,979 - INFO - 🔐 Database connection closed
+2026-03-14 21:03:47,155 - INFO - {'message': 'Rendering home page'}
+2026-03-14 22:11:23,814 - INFO - ✅ Connected to SQLite database
+2026-03-14 22:11:24,099 - INFO - {'username': 'srihan', 'role': 'customer', 'message': 'User logged in'}
+2026-03-14 22:11:24,605 - INFO - 🔐 Database connection closed
+2026-03-14 22:11:24,838 - INFO - {'message': 'Rendering home page'}
+2026-03-14 22:13:19,581 - INFO - ✅ Connected to SQLite database
+2026-03-14 22:13:19,582 - INFO - 🍔 Fetched menu items
+2026-03-14 22:13:19,582 - ERROR - {'error': "string indices must be integers, not 'str'", 'message': '❌ Menu fetch failed'}
+2026-03-14 22:13:19,582 - INFO - 🔐 Database connection closed
+2026-03-14 22:13:19,582 - INFO - 🍽️ OrderHandler initialized
+2026-03-14 22:13:39,807 - INFO - ✅ Connected to SQLite database
+2026-03-14 22:13:40,099 - INFO - {'username': 'srihan', 'role': 'customer', 'message': 'User logged in'}
+2026-03-14 22:13:40,605 - INFO - 🔐 Database connection closed
+2026-03-14 22:13:40,752 - INFO - {'message': 'Rendering home page'}
+2026-03-14 22:13:46,960 - INFO - ✅ Connected to SQLite database
+2026-03-14 22:13:46,960 - INFO - 🍔 Fetched menu items
+2026-03-14 22:13:46,960 - INFO - 🔐 Database connection closed
+2026-03-14 22:43:21,080 - INFO - ✅ Connected to SQLite database
+2026-03-14 22:43:21,080 - INFO - 🍔 Fetched menu items
+2026-03-14 22:43:21,080 - ERROR - {'error': "string indices must be integers, not 'str'", 'message': '❌ Menu fetch failed'}
+2026-03-14 22:43:21,081 - INFO - 🔐 Database connection closed
+2026-03-14 22:43:21,081 - INFO - 🍽️ OrderHandler initialized
+2026-03-14 22:43:21,089 - INFO - {'message': 'Rendering home page'}
+2026-03-14 22:44:10,203 - INFO - Streaming query: I want chicken biryani.
+2026-03-14 22:44:10,204 - INFO - Graph not found, building new graph
+2026-03-14 22:44:10,204 - INFO - 📈 Building workflow
+2026-03-14 22:44:10,211 - INFO - ✅ Graph built successfully
+2026-03-14 22:44:10,211 - INFO - Graph initialized
+2026-03-14 22:44:10,221 - INFO - (Re)configuring LLM -> openai/gpt-oss-120b
+2026-03-14 22:44:11,105 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-14 22:44:11,319 - INFO - 💬 LLM response: 
+2026-03-14 22:44:11,320 - INFO - Tool calls: [{'name': 'get_prices_for_items', 'args': {'items': ['chicken biryani']}, 'id': 'fc_baf60a34-655a-43e3-a6bb-0fccc198dc27', 'type': 'tool_call'}]
+2026-03-14 22:44:11,331 - INFO - ✅ Connected to SQLite database (Async)
+2026-03-14 22:44:11,332 - INFO - 🍔 Fetched menu items (Async)
+2026-03-14 22:44:11,333 - INFO - 💰 Prices fetched for 1 items
+2026-03-14 22:44:11,333 - INFO - 🔐 Database connection closed (Async)
+2026-03-14 22:44:11,430 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-14 22:44:11,767 - INFO - 💬 LLM response: Sure! Here’s a quick summary of your order:
+
+| Item          | Qty | Unit Price | Subtotal |
+|---------------|-----|------------|----------|
+| Chicken Biryani | 1   | $8.99      | $8.99    |
+
+**Total: $8.99**
+
+Would you like me to place this order for you?  
+
+Anything else I can help with?
+2026-03-14 22:44:42,256 - INFO - {'message': 'Rendering home page'}

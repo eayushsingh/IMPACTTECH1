@@ -15,7 +15,7 @@ logger = get_logger(__name__)
 
 # Check if API key is available
 if not GROQ_API_KEY:
-    st.error("❌ Missing API Token!")
+    st.error("Missing API token.")
     st.stop()
 
 # Decorator to enable chat history
@@ -37,8 +37,7 @@ def enable_chat_history(func):
             pass
 
     if "messages" not in st.session_state:
-        # Polite initial greeting with emojis
-        initial_greeting = "Welcome to DineMate! 🍽️ How can I assist you today? 😊"
+        initial_greeting = "Welcome to DineMate. How can I assist you today?"
         
         # Fetch menu from database
         db = Database()
@@ -46,11 +45,11 @@ def enable_chat_history(func):
         
         if menu:
             # Create a markdown table for the menu
-            menu_table = "| Item 🛒 | Price 💲|\n|------|-------|\n"
+            menu_table = "| Item | Price |\n|------|-------|\n"
             menu_table += "\n".join(f"| {item} | {price:.2f} $ |" for item, price in menu.items())
-            menu_message = f"Here's our menu 🍽️:\n{menu_table}\n"
+            menu_message = f"Here's our menu:\n{menu_table}\n"
         else:
-            menu_message = "Sorry, the menu is unavailable at the moment. ⚠️"
+            menu_message = "Sorry, the menu is unavailable at the moment."
         
         db.close_connection()  # Close the DB connection after fetching
         
@@ -58,7 +57,7 @@ def enable_chat_history(func):
         st.session_state["messages"] = [
             {"role": "assistant", "content": initial_greeting},
             {"role": "assistant", "content": menu_message},
-            {"role": "assistant", "content": "What would you like to order? 🍔"}
+            {"role": "assistant", "content": "What would you like to order?"}
         ]
 
     for msg in st.session_state["messages"]:
@@ -89,7 +88,7 @@ def configure_llm(model_name: str, force_reload: bool = False):
     global _llm_instance, _current_model
     
     if force_reload or _llm_instance is None or _current_model != model_name:
-        logger.info(f"🔄 (Re)configuring LLM → {model_name}")
+        logger.info(f"(Re)configuring LLM -> {model_name}")
         _llm_instance = ChatGroq(
             model_name=model_name,
             temperature=TEMPERATURE,
@@ -109,7 +108,7 @@ def print_qa(cls, question, answer):
         answer (str): Model response.
     """
     log_str = f"\nUsecase: {cls.__name__}\nQ: {question}\nA: {answer}\n" + "-" * 50
-    logger.info("💬 Q&A logged")
+    logger.info("Q&A logged")
 
 def sync_st_session():
     """
