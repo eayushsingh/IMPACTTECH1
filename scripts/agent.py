@@ -21,8 +21,8 @@ from scripts.config import MODEL_NAME, DEFAULT_MODEL_NAME
 from scripts.prompt import FOODBOT_PROMPT, SUMMARIZE_PROMPT
 from langchain_core.messages import SystemMessage, HumanMessage, RemoveMessage
 from scripts.config import LANGSMITH_PROJECT, SUMMARY_MESSAGE_THRESHOLD, KEEP_LAST_MESSAGES
-from scripts.tools import (get_full_menu, get_prices_for_items, save_order, check_order_status, 
-                    cancel_order, modify_order, get_order_details, introduce_developer)
+from scripts.tools import (get_prices_for_items, save_order, check_order_status,
+                    cancel_order, modify_order)
 
 logger = get_logger(__name__)
 
@@ -96,8 +96,8 @@ async def chatbot(state: State) -> State:
     
     llm = configure_llm(DEFAULT_MODEL_NAME)
     llm_with_tools = llm.bind_tools(
-        [get_full_menu, get_prices_for_items, save_order, check_order_status,
-        cancel_order, modify_order, get_order_details, introduce_developer]
+        [get_prices_for_items, save_order, check_order_status,
+        cancel_order, modify_order]
     )
     
     messages = [SystemMessage(content=system_prompt)] + messages
@@ -113,27 +113,11 @@ async def chatbot(state: State) -> State:
     
     logger.info(f"💬 LLM response: {response.content}")
     
-    # Handle tool calls and update state
+    # Keep menu state as-is; menu fetching is intentionally disabled for this scoped assistant.
     new_menu = state.get("menu", {})
+
     if response.tool_calls:
         logger.info(f"Tool calls: {response.tool_calls}")
-        for tool_call in response.tool_calls:
-            if tool_call["name"] == "get_full_menu":
-                menu_json = await get_full_menu.ainvoke({})
-                try:
-                    new_menu = json.loads(menu_json)
-                    logger.info("Cached new menu in state")
-                except json.JSONDecodeError:
-                    logger.error("Invalid menu JSON")
-                    new_menu = {}
-    
-    # Format menu as a user-friendly message if requested
-    if response.tool_calls and any(tc["name"] == "get_full_menu" for tc in response.tool_calls):
-        if new_menu:
-            formatted_menu = "\n".join(f"{item}: ${price:.2f}" for item, price in new_menu.items())
-            response.content = f"📜 Here's the menu:\n{formatted_menu}\nAnything else I can help with? 😊"
-        else:
-            response.content = "⚠️ Menu unavailable.\nAnything else I can help with? 😊"
     
     return {"messages": [response], "menu": new_menu}
 # ==================================================================================================

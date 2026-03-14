@@ -8,6 +8,10 @@ wheels/
 
 # Virtual environments
 .venv
+.venv-voice/
 
 # enviroment variables
 .env
+
+# Local runtime artifacts
+app/wav_files/

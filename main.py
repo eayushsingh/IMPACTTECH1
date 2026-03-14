@@ -148,39 +148,41 @@ elif page == "🎙️ Voice Chat":
         unsafe_allow_html=True
     )
     st.divider()
+    try:
+        from app import voice_chat
+        record_audio, transcribe_audio, get_llm_response, text_to_speech = voice_chat.ai_voice_assistance()
+        st.info("Voice assistant is scoped to: order, replace/modify, cancel, and track order.")
 
-    st.markdown(
-        "<div class='warning-container'><h3 style='color: #EF0606;'>🚨 Voice Chat Not Available</h3><p>Voice chat is disabled due to deployment issues with Streamlit Cloud.</p></div>",
-        unsafe_allow_html=True
-    )
-    st.markdown("""
-    ### Why It's Not Working:
-    - `streamlit.chat_message` requires Streamlit 1.25.0+, not supported on older cloud versions.
-    - `sounddevice` lacks microphone access in cloud environments.
-    - `whisper` (STT) requires FFmpeg, which may fail on cloud platforms.
-    - `TTS` (Text-to-Speech) depends on `torch`, unavailable on Streamlit Cloud.
+        if st.button("🎤 Start Voice Assistant", width="stretch"):
+            with st.spinner("Listening..."):
+                audio_file = record_audio()
 
-    ### 🚀 Run Locally to Enable Voice Chat:
-    1. Install **Python 3.10**.
-    2. Create a virtual environment:
-       ```bash
-       python -m venv dinemate_env
-       ```
-    3. Activate the environment:
-       - **Windows**: `dinemate_env\\Scripts\\activate`
-       - **macOS/Linux**: `source dinemate_env/bin/activate`
-    4. Install dependencies:
-       ```bash
-       pip install --upgrade pip
-       pip install streamlit==1.25.0 torch==2.0.0 torchaudio==2.0.0 TTS whisper pydub sounddevice numpy python-dotenv
-       ```
-    5. Run the app:
-       ```bash
-       streamlit run app.py
-       ```
-    6. Use voice ordering with your microphone! 🎙️
-    7. Deactivate: `deactivate`
-    """, unsafe_allow_html=True)
+            with st.spinner("Transcribing..."):
+                user_text = transcribe_audio(audio_file)
+
+            if not user_text.strip():
+                st.warning("No voice input detected. Please try again.")
+            else:
+                st.markdown(f"**You said:** {user_text}")
+
+                response_source = get_llm_response(user_text)
+                if isinstance(response_source, str):
+                    response_text = response_source
+                    st.markdown(f"**DineMate:** {response_text}")
+                else:
+                    with st.spinner("Processing your request..."):
+                        response_text = st.write_stream(response_source)
+
+                with st.spinner("Speaking response..."):
+                    text_to_speech(response_text)
+
+    except Exception as e:
+        logger.error({"error": str(e), "message": "Voice assistant initialization failed"})
+        st.markdown(
+            "<div class='warning-container'><h3 style='color: #EF0606;'>🚨 Voice Setup Error</h3><p>Install voice dependencies and use local execution for microphone support.</p></div>",
+            unsafe_allow_html=True
+        )
+        st.caption(str(e))
 
 elif page == "👨‍🍳 Kitchen Orders":
     kitchen.show_kitchen_orders()

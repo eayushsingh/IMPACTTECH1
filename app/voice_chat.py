@@ -2,11 +2,12 @@ import streamlit as st
 import whisper
 import wave
 import os
+import re
 import numpy as np
 import sounddevice as sd
 from dotenv import load_dotenv
 from TTS.api import TTS
-from scripts.agent import stream_graph_updates
+from scripts.streaming import stream_graph_updates
 from pydub import AudioSegment
 from pydub.playback import play
 
@@ -65,6 +66,17 @@ def transcribe_audio(filename=f"{wav_files}/user_order.wav"):
 # 🤖 Function to Get LLM Response
 def get_llm_response(user_text):
     """Gets response from the chatbot."""
+    text = (user_text or "").strip().lower()
+    allowed_pattern = re.compile(
+        r"\b(order|place|buy|modify|replace|change|cancel|track|status)\b"
+    )
+
+    if not allowed_pattern.search(text):
+        return (
+            "I can only help with placing, replacing, canceling, or tracking orders. "
+            "Please say one of these actions."
+        )
+
     return stream_graph_updates(user_text)
 
 # 🔊 Function for Text-to-Speech
